@@ -1,3 +1,5 @@
+Kubernetes provides a **declarative approach to deployments**, backed by a robust set of **APIs for management operations**.
+
 + **PODS**:  
 Pods are responsible for running your containers. Every Pod holds at least one container, and controls the execution of that container. When the containers exit, the Pod dies too.
 
