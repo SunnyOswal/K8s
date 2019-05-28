@@ -23,3 +23,6 @@ CronJobs provide a method for scheduling the execution of Pods. They are excelle
 
 + **CRDs**:  
 CustomResourceDefinitions, or CRDs, provide an extension mechanism that cluster operators and developers can use to create their own resource types.
+
++ **NAMESPACES**:  
+object is the logical isolation boundary like virtual cluster within a cluster used for separation.
