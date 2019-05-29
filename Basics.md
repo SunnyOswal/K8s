@@ -1,16 +1,28 @@
 Kubernetes provides a **declarative approach to deployments**, backed by a robust set of **APIs for management operations**.
 
-+ **PODS**:  
++ **API OBJECTS**
+  + **PODS**:  
 Pods are responsible for running your containers. Every Pod holds at least one container, and controls the execution of that container. When the containers exit, the Pod dies too.
 
-+ **REPLICA SET**:  
-A ReplicaSet ensures that a set of identically configured Pods are running at the desired replica count. If a Pod drops off, the ReplicaSet brings a new one online as a replacement.
+  + **CONTROLLERS**:  
+Define desired state. Respond to pod state and health.
 
+    + **REPLICA SET**:  
+A ReplicaSet ensures that a set of identically configured Pods are running at the **desired replica count**. If a Pod drops off, the ReplicaSet brings a new one online as a replacement.
+
+    + **DEPLOYMENTS**:  
+A Deployment is a higher-order abstraction that controls deploying and maintaining a set of Pods. Behind the scenes, it uses a ReplicaSet to keep the Pods running, but it offers sophisticated **logic for deploying, updating, and scaling a set of Pods** within a cluster.
+
+  + **SERVICES**:  
+is a network and abstraction for access to the services that pods actually provide, and so what Kubernetes does for us is it persistently allocates an IP and DNS name for the application services that are provided by the collection of pods that we want to front end with a service.  
+We can also leverage services to scale our application by adding or removing pods based on the demands of that application, and services also provide load balancing to distribute application load across those pods providing the application service.
+
+  + **STORAGE**:
+    + **Persistent volume**  
+    is pod-independent storage that's defined by the administrator at the cluster level, and so when a pod wants access to that storage, it defines what's called a persistent volume claim. This technique effectively decouples the pod from the storage inside of the cluster.
+    
 + **SECRETS**:  
 Secrets are used to store non-public information, such as tokens, certificates, or passwords. Secrets can be attached to Pods at runtime so that sensitive configuration data can be stored securely in the cluster.
-
-+ **DEPLOYMENTS**:  
-A Deployment is a higher-order abstraction that controls deploying and maintaining a set of Pods. Behind the scenes, it uses a ReplicaSet to keep the Pods running, but it offers sophisticated logic for deploying, updating, and scaling a set of Pods within a cluster.
 
 + **DAEMONSETS**:  
 DaemonSets provide a way to ensure that a copy of a Pod is running on every node in the cluster. As a cluster grows and shrinks, the DaemonSet spreads these specially labeled Pods across all of the nodes.
