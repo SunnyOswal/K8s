@@ -20,7 +20,17 @@ We can also leverage services to scale our application by adding or removing pod
   + **STORAGE**:
     + **Persistent volume**  
     is pod-independent storage that's defined by the administrator at the cluster level, and so when a pod wants access to that storage, it defines what's called a persistent volume claim. This technique effectively decouples the pod from the storage inside of the cluster.
+
++ **CLUSTER COMPONENTS**
+  + **MASTER**
+    + API SERVER + CLUSTER STORE(etcd) + SCHEDULER + CONTROLLER MANAGER
     
+  + **NODE**  
+    + KUBELET + KUBE-PROXY + CONTAINER RUNTIME 
+    
+  + **SCHEDULED/ADD ONS**  
+    + DNS + INGRESS + DASHBOARD
+
 + **SECRETS**:  
 Secrets are used to store non-public information, such as tokens, certificates, or passwords. Secrets can be attached to Pods at runtime so that sensitive configuration data can be stored securely in the cluster.
 
